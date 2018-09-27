@@ -7,30 +7,30 @@
  * - Spread operator (of arrays)
  * - Shallowing copying (with Object.assign)
  *
- * Do not declare anything with "var"
+ * Do not declare anything with "let"
  *
  * Reference
  * Slides: @see https://slides.com/jamaltaylor/es6/
  * ES6 Chart: @see http://es6-features.org/#Constants
  */
 
-// What can we put in place of "var"?
-var messageBox = document.getElementById("message");
+// What can we put in place of "let"?
+let messageBox = document.getElementById("message");
 
-// What can we put in place of "var"?
-var guestNetworkStatus = {
+// What can we put in place of "let"?
+let guestNetworkStatus = {
   location: "Sunnyside Hotel",
   networkName: "Guest Network",
   uptime: 90,
   lastPinged: new Date()
 };
 
-// What can we put in place of "var"?
-for (var i = 0; i < 5; i++) {
+// What can we put in place of "let"?
+for (let i = 0; i < 5; i++) {
   // What can we put in place of "function"?
   setTimeout(function() {
     // Let's make this a constant, because we are not going to ever change it
-    var serverData = [
+    let serverData = [
       {
         networkName: "Guest Network",
         lastPinged: new Date(),
@@ -54,8 +54,8 @@ for (var i = 0; i < 5; i++) {
 
 function process(guestNetwork, lobbyNetwork, staffNetwork) {
   // Replace the next two lines by destructuring an object instead
-  var lastPinged = guestNetwork.lastPinged;
-  var uptime = guestNetwork.uptime;
+  let lastPinged = guestNetwork.lastPinged;
+  let uptime = guestNetwork.uptime;
 
   // Let's set the properties of guestNetworkStatus by shallow copying
   // one object onto another. What object method can we use to do this?
@@ -65,8 +65,8 @@ function process(guestNetwork, lobbyNetwork, staffNetwork) {
   guestNetworkStatus.uptime = uptime;
   console.log(guestNetworkStatus);
 
-  // Does this need to use "var"?
-  var isBestNetwork =
+  // Does this need to use "let"?
+  let isBestNetwork =
     uptime > lobbyNetwork.uptime && uptime > staffNetwork.uptime;
 
   render(guestNetworkStatus, isBestNetwork);
@@ -74,7 +74,7 @@ function process(guestNetwork, lobbyNetwork, staffNetwork) {
 
 function render(guestNetworkStatus, betterThanStaffNetwork) {
   // Set message with string interpolation
-  var message =
+  let message =
     guestNetworkStatus.networkName +
     ": " +
     guestNetworkStatus.uptime +

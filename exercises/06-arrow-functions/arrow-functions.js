@@ -10,6 +10,8 @@ function add(a, b) {
   return a + b;
 }
 
+add(a,b) => a +b;
+
 /**
  * Refactor the following to use ES6 arrow syntax.
  * Make sure your refactored function is still called "tripleAndFilter".
@@ -18,14 +20,11 @@ function add(a, b) {
  * are divisibile by 5
  */
 function tripleAndFilter(arr) {
-  return arr
-    .map(function(value) {
-      return value * 3;
-    })
-    .filter(function(value) {
-      return value % 5 === 0;
-    });
+  return arr.map(function(value) {return value * 3;}).filter(function(value) {return value % 5 === 0;});
 }
+
+tripleAndFilter(arr) => arr.map( (value) => value *3 ). filter((value) => value % 5 ===0);
+
 /**
  * Refactor the following to use ES6 arrow syntax.
  * Make sure your refactored function is still called "doubleOddNumbers".

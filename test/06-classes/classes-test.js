@@ -5,7 +5,7 @@ const Counter = require("../../exercises/06-classes/classes").Counter;
 const Decrementor =
   require("../../exercises/06-classes/classes").Decrementor || null;
 
-describe("05-classes", () => {
+describe.only("05-classes", () => {
   it("Counter should be a class with the methods add and get and property counter", () => {
     var counter = new Counter(2);
     expect(counter).to.be.an.instanceof(Counter);
